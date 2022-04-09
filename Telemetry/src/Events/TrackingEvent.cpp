@@ -21,9 +21,9 @@ enum EventType{
 class TrackingEvent
 {
 protected:
-    EventType mType_;
+    /* data */
 public:
-    TrackingEvent(EventType type): mType_(type){}
+    TrackingEvent(/* args */);
     ~TrackingEvent();
 };
 
