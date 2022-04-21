@@ -5,3 +5,6 @@
 *.recipe
 *.user
 *.filters
+
+TaxiRevengeDLC/Telemetry/temp
+TaxiRevengeDLC/Telemetry/build
