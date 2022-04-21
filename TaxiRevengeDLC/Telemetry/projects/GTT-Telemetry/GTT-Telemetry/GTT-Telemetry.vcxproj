@@ -40,13 +40,13 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -78,11 +78,13 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)..\Telemetry\build\$(Platform)</OutDir>
+    <OutDir>$(SolutionDir)Telemetry/build</OutDir>
+    <IntDir>$(SolutionDir)Telemetry/temp</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)..\Telemetry\build\$(Platform)</OutDir>
+    <OutDir>$(SolutionDir)Telemetry/build</OutDir>
+    <IntDir>$(SolutionDir)Telemetry/temp</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -141,6 +143,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\include\Events\EnemyDeadEvent.h" />
+    <ClInclude Include="..\..\..\include\Events\EnemyFirstBloodEvent.h" />
+    <ClInclude Include="..\..\..\include\Events\EnemyHurtedEvent.h" />
+    <ClInclude Include="..\..\..\include\Events\EnemyShowEvent.h" />
+    <ClInclude Include="..\..\..\include\Events\LevelEndEvent.h" />
+    <ClInclude Include="..\..\..\include\Events\LevelStartEvent.h" />
+    <ClInclude Include="..\..\..\include\Events\PlayerDeadEvent.h" />
+    <ClInclude Include="..\..\..\include\Events\SessionEndEvent.h" />
+    <ClInclude Include="..\..\..\include\Events\SessionStartEvent.h" />
+    <ClInclude Include="..\..\..\include\Events\TrackingEvent.h" />
+    <ClInclude Include="..\..\..\include\Persistance\PersistanceSystem.h" />
+    <ClInclude Include="..\..\..\include\Serialization\json\JsonSerializer.h" />
+    <ClInclude Include="..\..\..\include\Utils\Singleton.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\Events\EnemyDeadEvent.cpp" />
+    <ClCompile Include="..\..\..\src\Events\EnemyFirstBloodEvent.cpp" />
+    <ClCompile Include="..\..\..\src\Events\EnemyHurtedEvent.cpp" />
+    <ClCompile Include="..\..\..\src\Events\EnemyShowEvent.cpp" />
+    <ClCompile Include="..\..\..\src\Events\LevelEndEvent.cpp" />
+    <ClCompile Include="..\..\..\src\Events\LevelStartEvent.cpp" />
+    <ClCompile Include="..\..\..\src\Events\PlayerDeadEvent.cpp" />
+    <ClCompile Include="..\..\..\src\Events\SessionEndEvent.cpp" />
+    <ClCompile Include="..\..\..\src\Events\SessionStartEvent.cpp" />
+    <ClCompile Include="..\..\..\src\Events\TrackingEvent.cpp" />
+    <ClCompile Include="..\..\..\src\Serialization\json\JsonSerializer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
