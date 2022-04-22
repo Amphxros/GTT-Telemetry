@@ -1,6 +1,6 @@
 #pragma once 
-
-class EnemyHurtedEvent
+#include "TrackingEvent.h"
+class EnemyHurtedEvent : public TrackingEvent
 {
 private:
     /* data */

@@ -1,6 +1,6 @@
 #pragma once
-
-class PlayerDeadEvent
+#include "TrackingEvent.h"
+class PlayerDeadEvent : public TrackingEvent
 {
 private:
     /* data */

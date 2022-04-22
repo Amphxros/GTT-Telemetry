@@ -1,8 +1,8 @@
 #pragma once
 
 #include <string>
-
-class IStream{
+// base class to write the file itself
+class IStream{ 
     public: 
         IStream() = default;
         virtual ~IStream()=default;

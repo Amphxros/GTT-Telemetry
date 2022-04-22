@@ -1,6 +1,4 @@
 
-#pragma once
-
 #include <ctime>
 #include <string>
 
@@ -25,12 +23,6 @@ protected:
 public:
     TrackingEvent(EventType type): mType_(type){}
     ~TrackingEvent();
+
+    inline EventType getEventType() const { return mType_; }
 };
-
-TrackingEvent::TrackingEvent(/* args */)
-{
-}
-
-TrackingEvent::~TrackingEvent()
-{
-}

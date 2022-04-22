@@ -1,6 +1,6 @@
 #pragma once 
-
-class SessionEndEvent
+#include "TrackingEvent.h"
+class SessionEndEvent : public TrackingEvent
 {
 private:
     /* data */
@@ -8,11 +8,3 @@ public:
     SessionEndEvent(/* args */);
     ~SessionEndEvent();
 };
-
-SessionEndEvent::SessionEndEvent(/* args */)
-{
-}
-
-SessionEndEvent::~SessionEndEvent()
-{
-}

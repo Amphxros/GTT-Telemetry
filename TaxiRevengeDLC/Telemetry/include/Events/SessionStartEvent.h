@@ -1,6 +1,6 @@
 #pragma once
-
-class SessionStartEvent
+#include "TrackingEvent.h"
+class SessionStartEvent: public TrackingEvent
 {
 private:
     /* data */

@@ -1,12 +1,17 @@
 
 #pragma once
 #include <string>
+#include "../IObject.h"
+struct Padding{
 
-class JsonObject
+};
+
+
+class JsonObject: public IObject
 {
 protected:
 
-    //useful char of json files
+    //useful chars of json files
     static constexpr char START_OBJ='{';
     static constexpr char END_OBJ='}';
     static constexpr char START_ARRAY='[';
@@ -19,15 +24,17 @@ protected:
     static constexpr char QUOTE='"';
     
     inline std::string formatString(const std::string& mString){
-        return QUOTE+ mString+ QUOTE;
+        return QUOTE + mString + QUOTE;
     }
 
-    
+    bool addedFirstElem=false;
     
     
 public:
     JsonObject(/* args */)=default;
     ~JsonObject();
+
+    
 };
 
 

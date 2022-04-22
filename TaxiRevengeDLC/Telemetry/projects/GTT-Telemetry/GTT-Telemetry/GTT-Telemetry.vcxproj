@@ -154,6 +154,8 @@
     <ClInclude Include="..\..\..\include\Events\SessionStartEvent.h" />
     <ClInclude Include="..\..\..\include\Events\TrackingEvent.h" />
     <ClInclude Include="..\..\..\include\Persistance\PersistanceSystem.h" />
+    <ClInclude Include="..\..\..\include\Serialization\ISerializer.h" />
+    <ClInclude Include="..\..\..\include\Serialization\IStream.h" />
     <ClInclude Include="..\..\..\include\Serialization\json\JsonSerializer.h" />
     <ClInclude Include="..\..\..\include\Utils\Singleton.h" />
   </ItemGroup>

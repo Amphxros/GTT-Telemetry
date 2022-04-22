@@ -1,6 +1,6 @@
 #pragma once 
-
-class LevelStartEvent
+#include "TrackingEvent.h"
+class LevelStartEvent : public TrackingEvent
 {
 private:
     /* data */

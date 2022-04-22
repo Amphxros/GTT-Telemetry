@@ -1,18 +1,13 @@
 #pragma once 
-
-class EnemyDeadEvent
+#include "TrackingEvent.h"
+class EnemyDeadEvent : public TrackingEvent
 {
 private:
-    /* data */
+    uint8_t mID_;
+
 public:
-    EnemyDeadEvent(/* args */);
-    ~EnemyDeadEvent();
+    EnemyDeadEvent(uint8_t id): TrackingEvent(EventType::EnemyDead), mID_(id){}
+    ~EnemyDeadEvent()=default;
 };
 
-EnemyDeadEvent::EnemyDeadEvent(/* args */)
-{
-}
 
-EnemyDeadEvent::~EnemyDeadEvent()
-{
-}

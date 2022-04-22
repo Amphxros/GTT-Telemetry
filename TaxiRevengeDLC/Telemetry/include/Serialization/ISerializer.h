@@ -4,7 +4,7 @@
 #include <string>
 
 class TrackingEvent;
-
+// class useful for making different types of serialization files(json, csv, xml...)
 class ISerializer{
     public:
         ISerializer()=default;
