@@ -7,6 +7,7 @@ bool GTTTracker::receiveEvent(TrackingEvent* mEvent)
 	switch (mEvent->getEventType())
 	{
 	case EventType::Session_Begin:
+	
 		break;
 
 	case EventType::Session_end:
