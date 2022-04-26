@@ -7,4 +7,6 @@ SessionEndEvent::SessionEndEvent(/* args */) :
 
 void SessionEndEvent::writeInJSON(JsonObject& object)
 {
+    object.add("EvType", "SessionEnd");
+    TrackingEvent::writeInJSON(object);
 }

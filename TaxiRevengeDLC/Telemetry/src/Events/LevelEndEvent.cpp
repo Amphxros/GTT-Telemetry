@@ -2,4 +2,6 @@
 
 void LevelEndEvent::writeInJSON(JsonObject& object)
 {
+	object.add("EvType", "Session End");
+	
 }

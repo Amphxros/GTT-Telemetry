@@ -2,4 +2,7 @@
 
 void EnemyShowEvent::writeInJSON(JsonObject& object)
 {
+
+	object.add("EvType", "EnemyShow " + mID_);
+	TrackingEvent::writeInJSON(object);
 }

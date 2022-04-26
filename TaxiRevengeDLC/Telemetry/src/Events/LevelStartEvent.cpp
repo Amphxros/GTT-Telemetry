@@ -2,4 +2,6 @@
 
 void LevelStartEvent::writeInJSON(JsonObject& object)
 {
+	object.add("EventType", "Session Start Event");
+	TrackingEvent::writeInJSON(object);
 }
