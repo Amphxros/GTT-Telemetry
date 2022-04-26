@@ -5,7 +5,7 @@ class SessionStartEvent: public TrackingEvent
 private:
     /* data */
 public:
-    SessionStartEvent(/* args */);
+    SessionStartEvent(/* args */):TrackingEvent(EventType::Session_Begin){}
     ~SessionStartEvent();
 };
 

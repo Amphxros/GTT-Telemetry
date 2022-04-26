@@ -162,6 +162,7 @@
     <ClInclude Include="..\..\..\include\Tracking\GTTTracker.h" />
     <ClInclude Include="..\..\..\include\Tracking\ITracker.h" />
     <ClInclude Include="..\..\..\include\Utils\Singleton.h" />
+    <ClInclude Include="..\..\..\include\Utils\uuid.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\Tracker.cpp" />

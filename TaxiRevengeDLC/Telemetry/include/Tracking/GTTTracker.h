@@ -1,7 +1,8 @@
 #pragma once
 #include "ITracker.h"
 
-class GTTTracker: public ITracker
+class GTTTracker:
+    public ITracker
 {
 private:
     /* data */

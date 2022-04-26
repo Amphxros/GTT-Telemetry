@@ -3,6 +3,7 @@
 #include <string>
 #include <ctime>
 #include <list>
+#include "Utils/uuid.h"
 
 class ITracker;
 class TrackingEvent;
@@ -23,8 +24,7 @@ public:
     Tracker(/* args */) = default;
     ~Tracker() = default;
 
-    std::string getIDGame();
-    std::string getIDSession();
+    std::string generateIDSession();
 
     void init(std::string IDGame);
     void end();
@@ -33,5 +33,6 @@ public:
     void setPersistence(IPersistence* nPersistance);
 
     const std::string& getIDSession() const { return idSession_; }
+    const std::string& getIDGame() const { return idGame_; }
     void trackEvent(TrackingEvent* nEvent);
 };
