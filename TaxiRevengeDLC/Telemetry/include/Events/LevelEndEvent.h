@@ -5,14 +5,8 @@ class LevelEndEvent : public TrackingEvent
 private:
     /* data */
 public:
-    LevelEndEvent(/* args */);
-    ~LevelEndEvent();
+    LevelEndEvent(): TrackingEvent(EventType::Level_end){}
+    ~LevelEndEvent() = default;
+    virtual void writeInJSON(JsonObject& object);
 };
 
-LevelEndEvent::LevelEndEvent(/* args */)
-{
-}
-
-LevelEndEvent::~LevelEndEvent()
-{
-}

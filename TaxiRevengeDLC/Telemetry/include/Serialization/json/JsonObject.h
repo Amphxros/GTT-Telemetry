@@ -32,7 +32,12 @@ protected:
     
 public:
     JsonObject(/* args */)=default;
-    ~JsonObject();
+    ~JsonObject() = default;
+
+    void open();
+    void close();
+
+    void add(const std::string& key, const std::string& val);
 
     
 };

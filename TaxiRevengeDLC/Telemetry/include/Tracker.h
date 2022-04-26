@@ -36,3 +36,7 @@ public:
     const std::string& getIDGame() const { return idGame_; }
     void trackEvent(TrackingEvent* nEvent);
 };
+
+inline Tracker* TrackerManager() {
+    return Tracker::getInstance();
+}

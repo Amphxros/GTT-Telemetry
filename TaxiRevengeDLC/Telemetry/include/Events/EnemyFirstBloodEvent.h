@@ -3,16 +3,12 @@
 class EnemyFirstBloodEvent : public TrackingEvent
 {
 private:
-    /* data */
+    uint8_t mID_;
 public:
-    EnemyFirstBloodEvent(/* args */);
-    ~EnemyFirstBloodEvent();
+    EnemyFirstBloodEvent(uint8_t id) : TrackingEvent(EventType::EnemyFirstBlood), mID_(id) {};
+    ~EnemyFirstBloodEvent() = default;
+
+    virtual void writeInJSON(JsonObject& object);
 };
 
-EnemyFirstBloodEvent::EnemyFirstBloodEvent(/* args */)
-{
-}
 
-EnemyFirstBloodEvent::~EnemyFirstBloodEvent()
-{
-}

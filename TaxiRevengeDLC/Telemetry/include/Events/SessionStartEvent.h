@@ -6,13 +6,7 @@ private:
     /* data */
 public:
     SessionStartEvent(/* args */):TrackingEvent(EventType::Session_Begin){}
-    ~SessionStartEvent();
+    ~SessionStartEvent() = default;
+    
+    virtual void writeInJSON(JsonObject& object);
 };
-
-SessionStartEvent::SessionStartEvent(/* args */)
-{
-}
-
-SessionStartEvent::~SessionStartEvent()
-{
-}

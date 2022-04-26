@@ -17,6 +17,7 @@ void IPersistence::setStream(IStream* nStream)
 {
 	mStream_ = nStream;
 	mStream_->open();
+    
 }
 
 void IPersistence::SetSerializer(ISerializer* nSerializer)

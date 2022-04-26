@@ -3,16 +3,10 @@
 class EnemyHurtedEvent : public TrackingEvent
 {
 private:
-    /* data */
+    uint8_t mID_;
 public:
-    EnemyHurtedEvent(/* args */);
-    ~EnemyHurtedEvent();
+    EnemyHurtedEvent(uint8_t id):TrackingEvent(EventType::EnemyHurted), mID_(id){}
+    ~EnemyHurtedEvent() = default;
+
+    virtual void writeInJSON(JsonObject& object);
 };
-
-EnemyHurtedEvent::EnemyHurtedEvent(/* args */)
-{
-}
-
-EnemyHurtedEvent::~EnemyHurtedEvent()
-{
-}

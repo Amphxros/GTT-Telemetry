@@ -8,6 +8,8 @@ private:
 public:
     EnemyDeadEvent(uint8_t id): TrackingEvent(EventType::EnemyDead), mID_(id){}
     ~EnemyDeadEvent()=default;
+
+    virtual void writeInJSON(JsonObject& object);
 };
 
 

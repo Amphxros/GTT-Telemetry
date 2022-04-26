@@ -3,6 +3,8 @@
 #include"Events/TrackingEvent.h"
 #include "Events/SessionEndEvent.h"
 #include "Events/SessionStartEvent.h"
+
+#include "Persistance/FilePersistence.h"
 #include "GTTTracker.h"
 
 std::string Tracker::generateIDSession()
@@ -45,5 +47,6 @@ void Tracker::setPersistence(IPersistence* nPersistance)
 void Tracker::trackEvent(TrackingEvent* nEvent)
 {
 	bool accept = false;
+	mPersistence_->send(nEvent);
 
 }

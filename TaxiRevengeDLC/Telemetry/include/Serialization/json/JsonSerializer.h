@@ -15,6 +15,7 @@ public:
     std::string serialize(TrackingEvent* mEvent) override;
     std::string getExtension() override {return ".json";}
 
+
 };
 
 

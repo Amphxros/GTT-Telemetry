@@ -5,14 +5,8 @@ class LevelStartEvent : public TrackingEvent
 private:
     /* data */
 public:
-    LevelStartEvent(/* args */);
-    ~LevelStartEvent();
+    LevelStartEvent(/* args */) : TrackingEvent(EventType::Level_Start) {}
+    ~LevelStartEvent() = default;
+
+    virtual void writeInJSON(JsonObject& object);
 };
-
-LevelStartEvent::LevelStartEvent(/* args */)
-{
-}
-
-LevelStartEvent::~LevelStartEvent()
-{
-}

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include<iostream>
 class IObject
 {
 public:
@@ -10,6 +11,7 @@ public:
     virtual std::string toString()const =0;
 protected:
 
+   
     virtual std::string formatString(const std::string& val){
         return val;
     }
@@ -27,7 +29,7 @@ protected:
     
 
     inline std::string serialize(const int16_t  val){
-        return  serialize(static_cast<int32_t>(val));
+        return serialize(static_cast<int32_t>(val));
     }
     
     inline std::string serialize(const uint16_t val){

@@ -3,16 +3,11 @@
 class EnemyShowEvent : public TrackingEvent
 {
 private:
-    /* data */
+    uint8_t mID_;
 public:
-    EnemyShowEvent(/* args */);
-    ~EnemyShowEvent();
+    EnemyShowEvent(uint8_t id) : TrackingEvent(EventType::EnemyShow), mID_(id) {}
+    ~EnemyShowEvent() = default;
+
+    virtual void writeInJSON(JsonObject& object);
 };
 
-EnemyShowEvent::EnemyShowEvent(/* args */)
-{
-}
-
-EnemyShowEvent::~EnemyShowEvent()
-{
-}

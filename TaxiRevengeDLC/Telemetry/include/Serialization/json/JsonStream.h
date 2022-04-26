@@ -1,5 +1,5 @@
 #include "../IStream.h"
-#include "json/JsonObject.h"
+#include "JsonObject.h"
 class JsonStream: 
     public IStream, private JsonObject
 {

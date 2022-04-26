@@ -5,6 +5,8 @@ class SessionEndEvent : public TrackingEvent
 private:
     /* data */
 public:
-    SessionEndEvent(/* args */);
-    ~SessionEndEvent();
+    SessionEndEvent(): TrackingEvent(EventType::Session_end){}
+    ~SessionEndEvent() = default;
+
+    virtual void writeInJSON(JsonObject& object);
 };
