@@ -36,7 +36,7 @@ void Tracker::end()
 
 void Tracker::activateTracker()
 {
-	mActiveTrackers_.push_back(new GTTTracker());
+	mActiveTrackers_.emplace_back(new GTTTracker());
 }
 
 void Tracker::setPersistence(IPersistence* nPersistance)

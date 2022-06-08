@@ -29,4 +29,6 @@ bool GTTTracker::receiveEvent(TrackingEvent* mEvent)
 	default:
 		break;
 	}
+
+	return false;
 }

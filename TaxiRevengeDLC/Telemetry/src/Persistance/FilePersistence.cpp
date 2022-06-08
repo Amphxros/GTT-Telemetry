@@ -7,7 +7,7 @@
 #include <fstream>
 #include <iostream>
 #include "../../include/Tracker.h"
-
+#include "../../include/Serialization/IStream.h"
 
 FilePersistence::FilePersistence(uint64_t time):
     mTimer_(time)
@@ -59,17 +59,38 @@ void FilePersistence::flush() {
                 mFileName_ = "data/" + TrackerManager()->getIDSession() + mSerializer_->getExtension();
             }
 
+            mFile_.open(mFileName_, std::ofstream::out | std::ofstream::app);
+            if (mFile_.fail()) {
+                throw std::runtime_error("Tracker error: data folder is missing");
+            }
+
+            if (!Tracker::isRunning())
+                mStream_->close();
+            
+
         }
     }
     catch (std::exception& e) {
-
+        std::cerr << e.what();
     }
 }
 
 void FilePersistence::run()
 {
     try {
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        auto prevFlushTime = std::clock();
+        prevFlushTime /= CLOCKS_PER_SEC;
 
+        while (Tracker::isRunning()) {
+            auto currTime = std::clock();
+            currTime /= CLOCKS_PER_SEC;
+            if (currTime - prevFlushTime >= mTimer_) {
+                flush();
+                prevFlushTime = currTime;
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
     }
     catch(std::exception& e){
         std::cerr << e.what();

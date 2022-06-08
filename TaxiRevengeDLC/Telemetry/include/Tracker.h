@@ -35,6 +35,8 @@ public:
     const std::string& getIDSession() const { return idSession_; }
     const std::string& getIDGame() const { return idGame_; }
     void trackEvent(TrackingEvent* nEvent);
+
+   inline static bool isRunning() { return running; }
 };
 
 inline Tracker* TrackerManager() {

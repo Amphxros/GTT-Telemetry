@@ -1,22 +1,13 @@
 #pragma once
-#pragma once
-#include "ITracker.h"
+#include "Tracking/ITracker.h"
 
 class GTTTracker: public ITracker
 {
 private:
     /* data */
 public:
-    GTTTracker(/* args */);
-    ~GTTTracker();
+    GTTTracker(/* args */)=default;
+    ~GTTTracker()=default;
     bool receiveEvent(TrackingEvent* mEvent) override;
 };
-
-GTTTracker::GTTTracker(/* args */)
-{
-}
-
-GTTTracker::~GTTTracker()
-{
-}
 

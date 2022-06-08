@@ -5,7 +5,7 @@ std::string JsonSerializer::serialize(TrackingEvent* mEvent)
 {
     JsonObject obj;
     obj.open();
-    mEvent->writeInJSON();
+    mEvent->writeInJSON(obj);
     obj.close();
 
     return std::string();

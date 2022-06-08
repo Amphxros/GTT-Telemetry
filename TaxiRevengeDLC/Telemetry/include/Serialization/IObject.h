@@ -8,7 +8,7 @@ public:
     IObject(/* args */)=default;
     ~IObject()= default;
 
-    virtual std::string toString()const =0;
+    virtual std::string toString()const { return ""; }
 protected:
 
    
