@@ -22,12 +22,13 @@ class TrackingEvent
 protected:
     time_t mTimestamp_;
     EventType mType_;
-    const std::string mIDGame_;
-    const std::string mIDSession_;
+    std::string mIDGame_;
+    std::string mIDSession_;
 
 
 public:
     TrackingEvent(EventType type);
+    TrackingEvent(EventType type, std::string idSession, std::string idGame);
     virtual ~TrackingEvent() = default;
 
     inline EventType getEventType() const { return mType_; }

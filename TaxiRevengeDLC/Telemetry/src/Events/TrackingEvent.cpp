@@ -9,6 +9,14 @@ TrackingEvent::TrackingEvent(EventType type) :
 	std::time(&mTimestamp_);
 	}
 
+TrackingEvent::TrackingEvent(EventType type, std::string idSession, std::string idGame):
+	mType_(type),
+	mIDGame_(idGame),
+	mIDSession_(idSession)
+{
+	std::time(&mTimestamp_);
+}
+
 void TrackingEvent::writeInJSON(JsonObject& object)
 {
 	object.add("IDGame", mIDGame_);

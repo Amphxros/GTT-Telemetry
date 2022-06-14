@@ -3,7 +3,7 @@ class Singleton
 {
 public:
 
-	Singleton(){}
+	Singleton() { instance = new T*; }
 	inline static T* getInstance() { return instance; }
 	static void deleteInstance();
 
