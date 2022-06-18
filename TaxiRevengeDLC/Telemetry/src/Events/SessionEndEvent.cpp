@@ -1,9 +1,9 @@
 #include "../../include/Events/SessionEndEvent.h"
 
-SessionEndEvent::SessionEndEvent(/* args */) :
+/*SessionEndEvent::SessionEndEvent() :
     TrackingEvent(EventType::Session_end)
 {
-}
+}*/
 
 void SessionEndEvent::writeInJSON(JsonObject& object)
 {
