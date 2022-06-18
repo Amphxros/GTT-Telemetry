@@ -3,6 +3,7 @@
 #include <string>
 #include "../Tracker.h"
 #include "../Serialization/json/JsonObject.h"
+
 enum EventType{
     
     Session_Begin,

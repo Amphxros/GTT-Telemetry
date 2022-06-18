@@ -48,5 +48,4 @@ void Tracker::trackEvent(TrackingEvent* nEvent)
 {
 	bool accept = false;
 	mPersistence_->send(nEvent);
-
 }

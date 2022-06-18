@@ -6,7 +6,7 @@ class GTTTracker:
     public ITracker
 {
 private:
-    uint32_t mLevelCount_;
+    unsigned int mLevelCount_;
     std::time_t mStartLevelTime_;
     std::time_t mEndLevelTime_;
 

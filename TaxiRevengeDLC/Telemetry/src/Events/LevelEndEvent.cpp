@@ -3,5 +3,7 @@
 void LevelEndEvent::writeInJSON(JsonObject& object)
 {
 	object.add("EvType", "Session End");
-	TrackingEvent::writeInJSON();
+
+	//Falta enviar por aqui el objeto
+	//TrackingEvent::writeInJSON();
 }
