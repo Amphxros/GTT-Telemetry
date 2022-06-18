@@ -9,7 +9,6 @@
 
 std::string Tracker::generateIDSession()
 {
-
 	return std::string();
 }
 
