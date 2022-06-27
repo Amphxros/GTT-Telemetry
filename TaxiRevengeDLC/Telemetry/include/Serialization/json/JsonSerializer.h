@@ -9,7 +9,7 @@ class JsonSerializer: public ISerializer
 private:
     /* data */
 public:
-    JsonSerializer(/* args */)= default;
+    JsonSerializer(/* args */);
     ~JsonSerializer()= default;
 
     std::string serialize(TrackingEvent* mEvent) override;

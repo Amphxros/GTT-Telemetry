@@ -13,6 +13,8 @@
 
 //Telemetry
 #include "../Telemetry/include/Tracker.h"
+#include "../Telemetry/include/Persistance/FilePersistence.h"
+#include "../Telemetry/include/Serialization/json/JsonSerializer.h"
 
 using namespace std;
 
@@ -21,6 +23,11 @@ typedef unsigned int uint;
 int main(int argc, char* argv[]) {
 	//Inicializacion 
 	Tracker* tracker = Tracker::getInstance();
+	FilePersistence* persistence = new FilePersistence(0);
+	JsonSerializer* serializer = new JsonSerializer();
+
+	//persistence->SetSerializer(serializer);
+	tracker->setPersistence(persistence);
 	tracker->init("juego");
 
 

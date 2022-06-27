@@ -23,7 +23,7 @@ Tracker* Tracker::getInstance()
 
 std::string Tracker::generateIDSession()
 {
-	return std::string();
+	return std::string("");
 }
 
 void Tracker::init(std::string IDGame)
