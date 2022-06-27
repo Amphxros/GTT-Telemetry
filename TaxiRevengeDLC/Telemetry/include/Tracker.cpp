@@ -7,6 +7,20 @@
 #include "Persistance/FilePersistence.h"
 #include "GTTTracker.h"
 
+bool Tracker::running = false;
+Tracker* Tracker::instance = nullptr;
+
+Tracker::Tracker() {}
+
+Tracker* Tracker::getInstance()
+{
+	if (instance == nullptr) {
+		instance = new Tracker();
+	}
+
+	return instance;
+}
+
 std::string Tracker::generateIDSession()
 {
 	return std::string();

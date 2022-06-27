@@ -9,7 +9,7 @@ class ITracker;
 class TrackingEvent;
 class IPersistence;
 
-class Tracker: public Singleton<Tracker>
+class Tracker
 {
 private:
     static bool running;
@@ -19,10 +19,13 @@ private:
 
     IPersistence* mPersistence_;
     std::list<ITracker*> mActiveTrackers_;
+    static Tracker* instance;
+    Tracker();
 
 public:
-    Tracker(/* args */) = default;
     ~Tracker() = default;
+
+    static Tracker* getInstance();
 
     std::string generateIDSession();
 
