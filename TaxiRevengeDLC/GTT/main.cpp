@@ -20,7 +20,8 @@ typedef unsigned int uint;
 
 int main(int argc, char* argv[]) {
 	//Inicializacion 
-	TrackerManager()->init("juego");
+	Tracker* tracker = Tracker::getInstance();
+	tracker->init("juego");
 
 
 	Game::getInstance()->initInstance(); //initInstance() only once
@@ -28,7 +29,7 @@ int main(int argc, char* argv[]) {
 	Game::destroyInstance();
 
 	//cierre del tracker
-	TrackerManager()->end();
+	tracker->end();
 
 	return 0;
 }

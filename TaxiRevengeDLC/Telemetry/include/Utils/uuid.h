@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include <random>
 #include <sstream>
 namespace uuid {
@@ -34,4 +34,4 @@ namespace uuid {
         };
         return ss.str();
     }
-}
+}*/
