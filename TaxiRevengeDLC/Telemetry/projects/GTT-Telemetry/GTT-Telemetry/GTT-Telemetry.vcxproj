@@ -157,15 +157,10 @@
     <ClInclude Include="..\..\..\include\Persistance\IPersistence.h" />
     <ClInclude Include="..\..\..\include\Serialization\IObject.h" />
     <ClInclude Include="..\..\..\include\Serialization\ISerializer.h" />
-    <ClInclude Include="..\..\..\include\Serialization\IStream.h" />
     <ClInclude Include="..\..\..\include\Serialization\json\JsonObject.h" />
     <ClInclude Include="..\..\..\include\Serialization\json\JsonSerializer.h" />
-    <ClInclude Include="..\..\..\include\Serialization\json\JsonStream.h" />
     <ClInclude Include="..\..\..\include\Tracker.h" />
-    <ClInclude Include="..\..\..\include\Tracking\GTTTracker.h" />
     <ClInclude Include="..\..\..\include\Tracking\ITracker.h" />
-    <ClInclude Include="..\..\..\include\Utils\Singleton.h" />
-    <ClInclude Include="..\..\..\include\Utils\uuid.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\Serialization\json\JsonObject.cpp" />
@@ -183,8 +178,6 @@
     <ClCompile Include="..\..\..\src\Persistance\FilePersistence.cpp" />
     <ClCompile Include="..\..\..\src\Persistance\IPersistence.cpp" />
     <ClCompile Include="..\..\..\src\Serialization\json\JsonSerializer.cpp" />
-    <ClCompile Include="..\..\..\src\Serialization\json\JsonStream.cpp" />
-    <ClCompile Include="..\..\..\src\Tracking\GTTTracker.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

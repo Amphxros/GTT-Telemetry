@@ -1,0 +1,80 @@
+{ 
+	 "Event type": "Session Begin" ,
+	 "Time": "1656445249"
+},
+{ 
+	 "Event type": "Level Start" ,
+	 "Time": "1656445250"
+},
+{ 
+	 "Event type": "Player Shoot" ,
+	 "Time": "1656445256"
+},
+{ 
+	 "Event type": "Player Shoot" ,
+	 "Time": "1656445257"
+},
+{ 
+	 "Event type": "Enemy Hurted" ,
+	 "Time": "1656445257"
+},
+{ 
+	 "Event type": "Player Hurted" ,
+	 "Time": "1656445257"
+},
+{ 
+	 "Event type": "Player Shoot" ,
+	 "Time": "1656445257"
+},
+{ 
+	 "Event type": "Enemy Hurted" ,
+	 "Time": "1656445257"
+},
+{ 
+	 "Event type": "Player Shoot" ,
+	 "Time": "1656445257"
+},
+{ 
+	 "Event type": "Enemy Hurted" ,
+	 "Time": "1656445257"
+},
+{ 
+	 "Event type": "Player Shoot" ,
+	 "Time": "1656445258"
+},
+{ 
+	 "Event type": "Enemy Hurted" ,
+	 "Time": "1656445258"
+},
+{ 
+	 "Event type": "Player Shoot" ,
+	 "Time": "1656445258"
+},
+{ 
+	 "Event type": "Player Shoot" ,
+	 "Time": "1656445259"
+},
+{ 
+	 "Event type": "Player Hurted" ,
+	 "Time": "1656445259"
+},
+{ 
+	 "Event type": "Player Shoot" ,
+	 "Time": "1656445260"
+},
+{ 
+	 "Event type": "Enemy Hurted" ,
+	 "Time": "1656445260"
+},
+{ 
+	 "Event type": "Enemy Dead" ,
+	 "Time": "1656445260"
+},
+{ 
+	 "Event type": "Level end" ,
+	 "Time": "1656445261"
+},
+{ 
+	 "Event type": "Session end" ,
+	 "Time": "1656445261"
+}

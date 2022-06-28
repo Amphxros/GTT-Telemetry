@@ -47,7 +47,7 @@ void FilePersistence::flush() {
                 }
 
                 if (mFileName_.empty()) {
-                    mFileName_ = "data" /*+ TrackerManager()->getIDSession()*/ + mSerializer_->getExtension();
+                    mFileName_ = "sesion_" + TrackerManager()->getIDSession() + mSerializer_->getExtension();
                 }
                 
                 mFile_.open(mFileName_);

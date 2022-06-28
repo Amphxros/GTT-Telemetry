@@ -5,7 +5,6 @@
 #include "Events/SessionStartEvent.h"
 
 #include "Persistance/FilePersistence.h"
-#include "GTTTracker.h"
 
 bool Tracker::running = false;
 Tracker* Tracker::instance = nullptr;
@@ -23,7 +22,9 @@ Tracker* Tracker::getInstance()
 
 std::string Tracker::generateIDSession()
 {
-	return std::string("");
+	std::time(&mTimeStamp_);
+	long long id = ((((long long)mTimeStamp_ % 100000) / 10) * 1000000) + (((long long)mTimeStamp_ / 100000) * 10) + ((long long)mTimeStamp_ % 10);
+	return std::to_string(id);
 }
 
 void Tracker::init(std::string IDGame)
@@ -31,6 +32,7 @@ void Tracker::init(std::string IDGame)
 	idGame_ = IDGame;
 	std::time(&mTimeStamp_);
 	idSession_ = generateIDSession();
+	initialTime = (long long)mTimeStamp_;
 	running = true;
 
 	trackEvent(new SessionStartEvent());
@@ -44,11 +46,6 @@ void Tracker::end()
 	delete mPersistence_;
 }
 
-void Tracker::activateTracker()
-{
-	mActiveTrackers_.emplace_back(new GTTTracker());
-}
-
 void Tracker::setPersistence(IPersistence* nPersistance)
 {
 	mPersistence_ = nPersistance;
@@ -58,4 +55,9 @@ void Tracker::trackEvent(TrackingEvent* nEvent)
 {
 	bool accept = false;
 	mPersistence_->send(nEvent);
+}
+
+long long Tracker::getInitialTime()
+{
+	return initialTime;
 }

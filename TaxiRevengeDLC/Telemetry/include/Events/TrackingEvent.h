@@ -22,6 +22,7 @@ class TrackingEvent
 {
 protected:
     time_t mTimestamp_;
+    long long time;
     EventType mType_;
     std::string mIDGame_;
     std::string mIDSession_;
@@ -34,6 +35,7 @@ public:
 
     inline EventType getEventType() const { return mType_; }
     inline time_t getTimeStamp() const { return mTimestamp_; }
+    inline long long getTime() const { return time; }
 
     virtual void writeInJSON(JsonObject& object);
 };

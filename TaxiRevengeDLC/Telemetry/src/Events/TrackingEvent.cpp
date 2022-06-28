@@ -16,6 +16,7 @@ TrackingEvent::TrackingEvent(EventType type, std::string idSession, std::string 
 	mIDSession_(idSession)
 {
 	std::time(&mTimestamp_);
+	time = (long long)mTimestamp_ - Tracker::getInstance()->getInitialTime();
 }
 
 void TrackingEvent::writeInJSON(JsonObject& object)
