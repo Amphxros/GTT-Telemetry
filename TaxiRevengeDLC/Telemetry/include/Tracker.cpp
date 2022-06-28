@@ -42,10 +42,6 @@ void Tracker::end()
 	trackEvent(new SessionEndEvent());
 	mPersistence_->flush();
 	delete mPersistence_;
-
-	while (!mActiveTrackers_.empty()) {
-		mActiveTrackers_.pop_back();
-	}
 }
 
 void Tracker::activateTracker()

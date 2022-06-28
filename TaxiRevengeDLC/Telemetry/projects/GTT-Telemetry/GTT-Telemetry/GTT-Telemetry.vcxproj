@@ -148,6 +148,8 @@
     <ClInclude Include="..\..\..\include\Events\LevelEndEvent.h" />
     <ClInclude Include="..\..\..\include\Events\LevelStartEvent.h" />
     <ClInclude Include="..\..\..\include\Events\PlayerDeadEvent.h" />
+    <ClInclude Include="..\..\..\include\Events\PlayerHurtedEvent.h" />
+    <ClInclude Include="..\..\..\include\Events\PlayerShootEvent.h" />
     <ClInclude Include="..\..\..\include\Events\SessionEndEvent.h" />
     <ClInclude Include="..\..\..\include\Events\SessionStartEvent.h" />
     <ClInclude Include="..\..\..\include\Events\TrackingEvent.h" />
@@ -173,6 +175,8 @@
     <ClCompile Include="..\..\..\src\Events\LevelEndEvent.cpp" />
     <ClCompile Include="..\..\..\src\Events\LevelStartEvent.cpp" />
     <ClCompile Include="..\..\..\src\Events\PlayerDeadEvent.cpp" />
+    <ClCompile Include="..\..\..\src\Events\PlayerHurtedEvent.cpp" />
+    <ClCompile Include="..\..\..\src\Events\PlayerShootEvent.cpp" />
     <ClCompile Include="..\..\..\src\Events\SessionEndEvent.cpp" />
     <ClCompile Include="..\..\..\src\Events\SessionStartEvent.cpp" />
     <ClCompile Include="..\..\..\src\Events\TrackingEvent.cpp" />

@@ -11,6 +11,11 @@
 #include "ShootComponent.h"
 #include "AimComponent.h"
 
+
+//Telemetria
+#include "../Telemetry/include/Tracker.h"
+#include "../Telemetry/include/Events/PlayerShootEvent.h"
+
 Turret::Turret(WeaponInfo w)
 {
 	animC_ = new Animation();
@@ -191,6 +196,9 @@ void Turret::Shoot()
 				shC_->shoot(normalB, false);
 				lastTimeShot_ = SDL_GetTicks();
 			}
+
+			//Evento de disparo
+			Tracker::getInstance()->trackEvent(new PlayerShootEvent());
 
 			//send msg tye
 			TaxiShootEvent e(this, crr_ActionShoot_); //send msg_type and capture idProyectileShoot

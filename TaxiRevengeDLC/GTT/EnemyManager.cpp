@@ -88,7 +88,7 @@ bool EnemyManager::EnemyAtPos(Vector2D pos, GameObject* enemy)
 
 bool EnemyManager::noMoreEnemies()
 {
-	return (GameManager::getInstance()->getEnemyCount() == 7 && lvlStarted);
+	return (GameManager::getInstance()->getEnemyCount() == 0 && lvlStarted);
 }
 
 int EnemyManager::GetEnemyCount()

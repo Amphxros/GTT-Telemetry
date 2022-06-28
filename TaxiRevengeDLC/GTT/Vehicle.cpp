@@ -14,6 +14,7 @@
 //Telemetria
 #include "../Telemetry/include/Tracker.h"
 #include "../Telemetry/include/Events/PlayerDeadEvent.h"
+#include "../Telemetry/include/Events/PlayerHurtedEvent.h"
 
 unique_ptr<Vehicle> Vehicle::instance_ = nullptr;
 
@@ -164,6 +165,9 @@ bool Vehicle::receiveEvent(Event & e) {
 
 	case IMPACT_DAMAGE:
 		sprite_->playAnimation("hitDamage", 30.0f, false); //play establece anim como currentAnm y al renderizar secciona por frames
+
+		//Evento recibir daño
+		Tracker::getInstance()->trackEvent(new PlayerHurtedEvent());
 		//como loop es false vuelve a la animaci�n por defecto
 		Event eV(this, IMPACT_DAMAGE);
 		broadcastEvent(eV); //TaxiSoundManager recieved this message

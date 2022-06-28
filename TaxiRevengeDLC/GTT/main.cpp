@@ -33,10 +33,11 @@ int main(int argc, char* argv[]) {
 
 	Game::getInstance()->initInstance(); //initInstance() only once
 	Game::getInstance()->run();
+	//cierre del tracker
+	Tracker::getInstance()->end();
 	Game::destroyInstance();
 
-	//cierre del tracker
-	tracker->end();
+	
 
 	return 0;
 }

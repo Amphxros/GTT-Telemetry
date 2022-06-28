@@ -19,10 +19,10 @@ bool GTTTracker::receiveEvent(TrackingEvent* mEvent)
 	case EventType::Level_end:
 		break;
 
-	case EventType::EnemyShow:
-		break;
-	case EventType::EnemyFirstBlood:
-		break;
+	//case EventType::EnemyShow:
+		//break;
+	//case EventType::EnemyFirstBlood:
+		//break;
 	case EventType::EnemyDead:
 		break;
 	case EventType::EnemyHurted:

@@ -22,7 +22,7 @@ std::string EventToString(EventType ev)
     case Level_end:   return "Level end";
     case PlayerDead:   return "Player Dead";
     case PlayerHurted:   return "Player Hurted";
-    case PlayerShoot:   return "PlayerShoot";
+    case PlayerShoot:   return "Player Shoot";
     case EnemyDead:   return "Enemy Dead";
     case EnemyHurted: return "Enemy Hurted";
     default:      return "[Unknown event type]";

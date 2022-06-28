@@ -37,7 +37,7 @@ void FilePersistence::flush() {
         std::string output = "";
 
         try {
-            for (auto it = 0; it < mEvents_.size(); ++it) {
+            for (auto it = 0; it < mEvents_.size();) {
                     auto& ev = mEvents_.front();
                     mEvents_.pop();
 
@@ -59,9 +59,6 @@ void FilePersistence::flush() {
                 mFile_ << output;
                 mFile_.close();
 
-                if (!Tracker::isRunning())
-                    mStream_->close();
-                
 
         }
         catch (std::exception& e) {
