@@ -55,7 +55,6 @@ void FilePersistence::flush() {
                 if (mFile_.fail()) {
                     throw std::runtime_error("Tracker error: data folder is missing");
                 }
-
                 mFile_ << output;
                 mFile_.close();
 
