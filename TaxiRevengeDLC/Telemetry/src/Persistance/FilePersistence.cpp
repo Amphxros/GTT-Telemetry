@@ -46,7 +46,9 @@ void FilePersistence::flush() {
                     mEvents_.pop();
 
                     mEventMutex_.unlock();
+
                     //add the event
+                    mSerializer_->serialize(ev);
 
                     mEventMutex_.lock();
 
@@ -54,11 +56,12 @@ void FilePersistence::flush() {
                 mEventMutex_.unlock();
 
                 if (mFileName_.empty()) {
-                    mFileName_ = "data/" + TrackerManager()->getIDSession() + mSerializer_->getExtension();
+                    mFileName_ = /*"data/" + */TrackerManager()->getIDSession() + mSerializer_->getExtension();
                 }
 
                 mFile_.open(mFileName_, std::ofstream::out | std::ofstream::app);
                 if (mFile_.fail()) {
+                    std::cout << mFileName_ << std::endl;
                     throw std::runtime_error("Tracker error: data folder is missing");
                 }
 
