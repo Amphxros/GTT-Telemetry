@@ -1,5 +1,6 @@
 #include "EnemyManager.h"
 #include "NodeMapsManager.h"
+#include "GameManager.h"
 
 unique_ptr<EnemyManager> EnemyManager::instance_ = nullptr;
 
@@ -85,6 +86,11 @@ bool EnemyManager::EnemyAtPos(Vector2D pos, GameObject* enemy)
 	return false;
 }
 
+bool EnemyManager::noMoreEnemies()
+{
+	return (GameManager::getInstance()->getEnemyCount() == 7 && lvlStarted);
+}
+
 int EnemyManager::GetEnemyCount()
 {
 	return enemies_.size();
@@ -104,6 +110,7 @@ void EnemyManager::render(Uint32 deltaTime)
 	for (auto e : enemies_) {
 		if(e.second!=nullptr)
 		e.second->render(deltaTime);
+		lvlStarted = true;
 	}
 }
 

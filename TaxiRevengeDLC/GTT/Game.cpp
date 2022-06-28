@@ -254,6 +254,7 @@ void Game::run() {
 	Tracker::getInstance()->trackEvent(new LevelStartEvent());
 
 	while (!exit_) {
+		exit_ = EnemyManager::getInstance()->noMoreEnemies();
 		handleEvents(deltaTime);
 		update(deltaTime);
 		render(deltaTime);

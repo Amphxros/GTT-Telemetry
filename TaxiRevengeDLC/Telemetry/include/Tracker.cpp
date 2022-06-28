@@ -40,6 +40,7 @@ void Tracker::init(std::string IDGame)
 void Tracker::end()
 {
 	trackEvent(new SessionEndEvent());
+	mPersistence_->flush();
 	delete mPersistence_;
 
 	while (!mActiveTrackers_.empty()) {

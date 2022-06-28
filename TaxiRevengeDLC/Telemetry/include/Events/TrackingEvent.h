@@ -11,10 +11,9 @@ enum EventType{
     Session_end,
     Level_Start,
     Level_end,
-
-    EnemyShow,
-	EnemyFirstBlood,
 	PlayerDead,
+    PlayerHurted,
+    PlayerShoot,
 	EnemyDead,
 	EnemyHurted
 };
