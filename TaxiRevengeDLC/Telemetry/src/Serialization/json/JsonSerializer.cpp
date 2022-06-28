@@ -33,7 +33,10 @@ std::string JsonSerializer::serialize(TrackingEvent* mEvent)
 {
     std::string jsonString = "";
 
-    if (mEvent->getEventType() == EventType::Session_Begin) jsonString += "[ \n";
+    if (mEvent->getEventType() == EventType::Session_Begin) { 
+        jsonString += "{\n"; 
+        jsonString += "\"events\": [ \n";
+    }
 
     jsonString += "{ \n";
     jsonString += "\t \"Event type\": ";
@@ -45,7 +48,11 @@ std::string JsonSerializer::serialize(TrackingEvent* mEvent)
     jsonString += "\"" + ts + "\"\n";
     jsonString += "}";
 
-    if (mEvent->getEventType() == EventType::Session_end) jsonString += "\n]";
+    if (mEvent->getEventType() == EventType::Session_end) { 
+        jsonString += "\n"; 
+        jsonString += "]";
+        jsonString += "\n}"; 
+    }
     else jsonString += ",\n";
 
     return jsonString;

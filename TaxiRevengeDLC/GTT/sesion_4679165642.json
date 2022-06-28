@@ -1,4 +1,5 @@
-[ 
+{
+"events": [  
 { 
 	 "Event type": "Session Begin" ,
 	 "Time": "1656446792"
@@ -356,3 +357,4 @@
 	 "Time": "1656446888"
 }
 ]
+}
