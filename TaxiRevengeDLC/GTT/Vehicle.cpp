@@ -11,6 +11,10 @@
 
 #include "EnemyManager.h"
 
+//Telemetria
+#include "../Telemetry/include/Tracker.h"
+#include "../Telemetry/include/Events/PlayerDeadEvent.h"
+
 unique_ptr<Vehicle> Vehicle::instance_ = nullptr;
 
 Vehicle::Vehicle() {
@@ -116,6 +120,9 @@ void Vehicle::update(Uint32 time) {
 		//zombie_ = true; //estable el flag
 		alive_ = false;
 		deathTime_ = SDL_GetTicks();
+
+		//Evento muerte de jugador
+		Tracker::getInstance()->trackEvent(new PlayerDeadEvent());
 	}
 	if (!alive_ && SDL_GetTicks() - deathTime_ >= 500) {
 		Respawn();

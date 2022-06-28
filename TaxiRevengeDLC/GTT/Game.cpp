@@ -12,6 +12,10 @@
 #include "Events.h"
 //#include "GameManager.h"
 
+//Telemetria
+#include "../Telemetry/include/Tracker.h"
+#include "../Telemetry/include/Events/LevelStartEvent.h"
+#include "../Telemetry/include/Events/LevelEndEvent.h"
 
 #include <iostream>
 
@@ -246,6 +250,9 @@ void Game::run() {
 	Uint32 lastTime = SDL_GetTicks();
 	Uint32 deltaTime = lastTime;
 
+	//Evento de inicio de nivel
+	Tracker::getInstance()->trackEvent(new LevelStartEvent());
+
 	while (!exit_) {
 		handleEvents(deltaTime);
 		update(deltaTime);
@@ -255,6 +262,9 @@ void Game::run() {
 		deltaTime = SDL_GetTicks() - lastTime;
 		lastTime = SDL_GetTicks();
 	}
+
+	//Evento de final de nivel
+	Tracker::getInstance()->trackEvent(new LevelEndEvent());
 
 	end();
 }

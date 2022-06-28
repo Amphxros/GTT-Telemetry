@@ -57,7 +57,6 @@ void FilePersistence::flush() {
                 }
 
                 mFile_ << output;
-                std::cout << "salidaaaaaaaaaaaaaaa " << output << std::endl;
                 mFile_.close();
 
                 if (!Tracker::isRunning())

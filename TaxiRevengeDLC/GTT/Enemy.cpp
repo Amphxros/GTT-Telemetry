@@ -8,6 +8,10 @@
 #include "TaxiSoundManagerCP.h"
 #include "Money.h"
 
+//Telemetria
+#include "../Telemetry/include/Tracker.h"
+#include "../Telemetry/include/Events/EnemyHurtedEvent.h"
+#include "../Telemetry/include/Events/EnemyDeadEvent.h"
 
 Enemy::Enemy(VehicleInfo r, NodeMap* nmap, vector<Node*> route, Vector2D pos, WeaponInfo weapon){
 	this->setWidth(r.width);
@@ -68,7 +72,14 @@ void Enemy::Damage(double damage)
 {
 	health_->damage(damage);
 	sprite_->playAnimation("hitDamage", 30.0f, false);
+
+	//Evento de enemigo alcanzado
+	Tracker::getInstance()->trackEvent(new EnemyHurtedEvent());
+
 	if (health_->getHealth() <= 0 && !bodyReadyToDestroy_) { 
+		//Evento de muerte de enemigo
+		Tracker::getInstance()->trackEvent(new EnemyDeadEvent());
+
 		GameManager::getInstance()->addKill();
 		GameManager::getInstance()->decreaseEnemyCount();
 		SoundManager::getInstance()->playSound_Ch(0, ENEMY_DIE, 0); //channel 0 for not interrupt other sounds

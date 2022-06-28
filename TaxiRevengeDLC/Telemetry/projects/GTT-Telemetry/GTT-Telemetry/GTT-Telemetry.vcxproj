@@ -144,9 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\include\Events\EnemyDeadEvent.h" />
-    <ClInclude Include="..\..\..\include\Events\EnemyFirstBloodEvent.h" />
     <ClInclude Include="..\..\..\include\Events\EnemyHurtedEvent.h" />
-    <ClInclude Include="..\..\..\include\Events\EnemyShowEvent.h" />
     <ClInclude Include="..\..\..\include\Events\LevelEndEvent.h" />
     <ClInclude Include="..\..\..\include\Events\LevelStartEvent.h" />
     <ClInclude Include="..\..\..\include\Events\PlayerDeadEvent.h" />
@@ -171,9 +169,7 @@
     <ClCompile Include="..\..\..\include\Serialization\json\JsonObject.cpp" />
     <ClCompile Include="..\..\..\include\Tracker.cpp" />
     <ClCompile Include="..\..\..\src\Events\EnemyDeadEvent.cpp" />
-    <ClCompile Include="..\..\..\src\Events\EnemyFirstBloodEvent.cpp" />
     <ClCompile Include="..\..\..\src\Events\EnemyHurtedEvent.cpp" />
-    <ClCompile Include="..\..\..\src\Events\EnemyShowEvent.cpp" />
     <ClCompile Include="..\..\..\src\Events\LevelEndEvent.cpp" />
     <ClCompile Include="..\..\..\src\Events\LevelStartEvent.cpp" />
     <ClCompile Include="..\..\..\src\Events\PlayerDeadEvent.cpp" />
