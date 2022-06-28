@@ -10,12 +10,9 @@ public:
 	void flush() override;
 
 	void run();
-	void startThread();
 
 
 private:
-	std::mutex mEventMutex_;
 	uint64_t mTimer_{ 60 };
-	std::thread* mFlushThread_;
 	std::string mFileName_;
 };

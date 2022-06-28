@@ -1,8 +1,7 @@
 #pragma once 
 #include <ctime>
-#include <mutex>
 #include <queue>
-#include <thread>
+#include <string>
 
 class TrackingEvent;
 class ISerializer;

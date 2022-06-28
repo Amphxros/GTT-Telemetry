@@ -13,13 +13,10 @@ FilePersistence::FilePersistence(uint64_t time):
     mTimer_(time)
 {
     std::ofstream file;
-    startThread();
 }
 
 FilePersistence::~FilePersistence()
 {
-    mFlushThread_->join();
-    delete mFlushThread_;
     try {
         flush();
     }
@@ -30,7 +27,6 @@ FilePersistence::~FilePersistence()
 }
 
 void FilePersistence::send(TrackingEvent* nEvent) {
-    std::lock_guard<std::mutex> lock(mEventMutex_);
     mEvents_.push(nEvent);
 }
 
@@ -39,21 +35,17 @@ void FilePersistence::flush() {
         std::ofstream mFile_;
 
         try {
-            mEventMutex_.lock();
             for (auto it = 0; it < mEvents_.size(); ++it) {
                 {
                     auto& ev = mEvents_.front();
                     mEvents_.pop();
 
-                    mEventMutex_.unlock();
 
                     //add the event
                     mSerializer_->serialize(ev);
 
-                    mEventMutex_.lock();
 
                 }
-                mEventMutex_.unlock();
 
                 if (mFileName_.empty()) {
                     mFileName_ = /*"data/" + */TrackerManager()->getIDSession() + mSerializer_->getExtension();
@@ -80,7 +72,6 @@ void FilePersistence::flush() {
 void FilePersistence::run()
 {
     try {
-        std::this_thread::sleep_for(std::chrono::seconds(1));
         auto prevFlushTime = std::clock();
         prevFlushTime /= CLOCKS_PER_SEC;
 
@@ -91,16 +82,10 @@ void FilePersistence::run()
                 flush();
                 prevFlushTime = currTime;
             }
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
 
     }
     catch(std::exception& e){
         std::cerr << e.what();
     }
-}
-
-void FilePersistence::startThread()
-{
-    mFlushThread_ = new std::thread([&]() { run(); });
 }
