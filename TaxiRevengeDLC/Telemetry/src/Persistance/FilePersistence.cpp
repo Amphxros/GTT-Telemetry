@@ -6,6 +6,7 @@
 #include <ctime>
 #include <fstream>
 #include <iostream>
+#include <string>
 #include "../../include/Tracker.h"
 #include "../../include/Serialization/IStream.h"
 
@@ -33,35 +34,36 @@ void FilePersistence::send(TrackingEvent* nEvent) {
 void FilePersistence::flush() {
     if (!mEvents_.empty()) {
         std::ofstream mFile_;
+        std::string output = "";
 
         try {
             for (auto it = 0; it < mEvents_.size(); ++it) {
-                {
                     auto& ev = mEvents_.front();
                     mEvents_.pop();
 
-
                     //add the event
-                    mSerializer_->serialize(ev);
-
+                    output += mSerializer_->serialize(ev);
 
                 }
 
                 if (mFileName_.empty()) {
-                    mFileName_ = /*"data/" + */TrackerManager()->getIDSession() + mSerializer_->getExtension();
+                    mFileName_ = "data" /*+ TrackerManager()->getIDSession()*/ + mSerializer_->getExtension();
                 }
+                
+                mFile_.open(mFileName_);
 
-                mFile_.open(mFileName_, std::ofstream::out | std::ofstream::app);
                 if (mFile_.fail()) {
-                    std::cout << mFileName_ << std::endl;
                     throw std::runtime_error("Tracker error: data folder is missing");
                 }
+
+                mFile_ << output;
+                std::cout << "salidaaaaaaaaaaaaaaa " << output << std::endl;
+                mFile_.close();
 
                 if (!Tracker::isRunning())
                     mStream_->close();
                 
 
-            }
         }
         catch (std::exception& e) {
             std::cerr << e.what();

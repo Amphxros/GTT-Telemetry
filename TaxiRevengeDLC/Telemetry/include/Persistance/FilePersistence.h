@@ -1,5 +1,6 @@
 #pragma once
 #include "IPersistence.h"
+#include <string>
 
 class FilePersistence final: public IPersistence {
 public:
