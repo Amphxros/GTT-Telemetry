@@ -10,10 +10,10 @@ private:
     /* data */
 public:
     JsonSerializer(/* args */);
-    ~JsonSerializer()= default;
+    ~JsonSerializer();
 
     std::string serialize(TrackingEvent* mEvent) override;
-    std::string getExtension() override {return ".json";}
+    std::string getExtension() override;
 
 
 };

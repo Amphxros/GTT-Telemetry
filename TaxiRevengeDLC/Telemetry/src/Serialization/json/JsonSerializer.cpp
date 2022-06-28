@@ -4,6 +4,9 @@
 JsonSerializer::JsonSerializer()
 {
 }
+JsonSerializer::~JsonSerializer()
+{
+}
 std::string JsonSerializer::serialize(TrackingEvent* mEvent)
 {
     JsonObject obj;
@@ -12,4 +15,9 @@ std::string JsonSerializer::serialize(TrackingEvent* mEvent)
     obj.close();
 
     return std::string();
+}
+
+std::string JsonSerializer::getExtension()
+{
+    return ".json";
 }

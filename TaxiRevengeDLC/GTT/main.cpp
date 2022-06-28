@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
 	FilePersistence* persistence = new FilePersistence(0);
 	JsonSerializer* serializer = new JsonSerializer();
 
-	//persistence->SetSerializer(serializer);
+	persistence->SetSerializer(serializer);
 	tracker->setPersistence(persistence);
 	tracker->init("juego");
 

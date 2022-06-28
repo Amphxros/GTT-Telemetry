@@ -7,7 +7,7 @@ class TrackingEvent;
 class ISerializer{
     public:
         ISerializer() = default;
-        virtual ~ISerializer()=0;
+        ~ISerializer() = default;
 
         virtual std::string serialize(TrackingEvent* mEvent) =0;
         virtual std::string getExtension()=0;
